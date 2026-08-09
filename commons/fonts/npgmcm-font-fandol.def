@@ -1,0 +1,81 @@
+\ProvidesFile{commons/fonts/npgmcm-font-fandol.def}[2026/08/08 v1.0.0 Fandol fonts definition (NPGMCM Thesis)]
+
+% 西文字体 -------
+% 主字体 -------
+\setmainfont[
+  Extension      = .otf,
+  UprightFont    = *-regular,
+  BoldFont       = *-bold,
+  ItalicFont     = *-italic,
+  BoldItalicFont = *-bolditalic,
+]{texgyretermes}
+% -----
+
+% 无衬线字体 -------
+\setsansfont[
+  Extension      = .otf,
+  UprightFont    = *-regular,
+  BoldFont       = *-bold,
+  ItalicFont     = *-italic,
+  BoldItalicFont = *-bolditalic,
+]{texgyreheros}
+% -----
+
+% 等宽字体 -------
+\setmonofont[
+  Extension      = .otf,
+  UprightFont    = *-regular,
+  BoldFont       = *-bold,
+  ItalicFont     = *-italic,
+  BoldItalicFont = *-bolditalic,
+  Scale          = MatchLowercase,
+]{texgyrecursor}
+% -----
+% -----
+
+% 中文字体 -------
+% 主字体 -------
+% -----
+
+% 无衬线字体 -------
+% -----
+
+% 宋体 -------
+\setCJKfamilyfont{zhsong}[
+  Path={fonts/source-series/},
+  Extension={.ttf},
+  BoldFont={SourceHanSerifCN-SemiBold},
+]{SourceHanSerifCN-Regular}
+% -----
+
+% 黑体 -------
+\setCJKfamilyfont{zhhei}[
+  Path={fonts/source-series/},
+  Extension={.ttf},
+]{SourceHanSansCN-Regular}
+% -----
+
+% 楷体 -------
+\setCJKfamilyfont{zhkai}[
+  Path={fonts/},
+  Extension={.ttf},
+  AutoFakeBold={2.15},
+]{kai}
+% -----
+
+% 隶书 -------
+\setCJKfamilyfont{zhli}[
+  Path={fonts/},
+  Extension={.ttf},
+]{lishu}
+% -----
+
+\NewDocumentCommand{\songti}{}{\CJKfamily{zhsong}}
+\NewDocumentCommand{\heiti}{}{\CJKfamily{zhhei}}
+\NewDocumentCommand{\kaishu}{}{\CJKfamily{zhkai}}
+\NewDocumentCommand{\lishu}{}{\CJKfamily{zhli}}
+% -----
+
+\endinput
+
+% vim: set ft=tex fdm=marker fmr=\ -------,-----:

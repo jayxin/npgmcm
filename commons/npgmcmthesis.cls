@@ -9,6 +9,9 @@
 %% Inital Code
 \newif\if@gmcm@bwprint\@gmcm@bwprintfalse
 \newif\if@gmcm@preface\@gmcm@prefacetrue
+\newif\if@gmcm@linux\@gmcm@linuxtrue
+\newif\if@gmcm@windows
+\newif\if@gmcm@mac
 % tokens definition
 %%%% 承诺书
 \newcommand\gmcm@tokens@keywords{}
@@ -28,12 +31,16 @@
 \DeclareOption{colorprint}{\@gmcm@bwprintfalse}
 \DeclareOption{bwprint}{\@gmcm@bwprinttrue}
 \DeclareOption{withoutpreface}{\@gmcm@prefacefalse}
+\DeclareOption{linux}{\@gmcm@linuxtrue}
+\DeclareOption{windows}{\@gmcm@linuxfalse\@gmcm@windowstrue}
+\DeclareOption{mac}{\@gmcm@linuxfalse\@gmcm@mactrue}
+\DeclareOption{draft}{\PassOptionsToPackage{draft}{graphicx}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexart}}
 %% Executing of Options
 \ExecuteOptions{colorprint}
 \ProcessOptions\relax
 %% Loading Class
-\LoadClass[a4paper,zihao=-4]{ctexart}
+\LoadClass[a4paper,zihao=-4,fontset=none]{ctexart}
 %% Loading Package
 \RequirePackage{ifxetex}
 \RequireXeTeX
@@ -194,122 +201,17 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \renewcommand*{\baselinestretch}{1.38}
 % 每行缩进两个汉字
 \setlength\parindent{2em}
-% 设置字体
-% 代码来自https://github.com/OsbertWang/GMCMthesis 这个是OsbertWang，修正支持让各个系统自适应支持近似字体。
-\newif\ifmcm@mac
-\newif\ifmcm@windows
-\newif\ifmcm@fandol
 
-
-\@ifclasslater{ctexart}{2015/05/06}{
-  %\newcommand\mcm@strifeq{\csname str_if_eq_x:nnTF\endcsname}
-  %修订错误来自：https://github.com/ustctug/ustcthesis/issues/241
-  \newcommand\mcm@strifeq[4]{%
-  \edef\ustc@tmp@a{#1}%
-  \edef\ustc@tmp@b{#2}%
-  \ifx\ustc@tmp@a\ustc@tmp@b
-    #3%
-  \else
-    #4%
-  \fi
-}
-  \newcommand\mcm@fontset{\csname g__ctex_fontset_tl\endcsname}
-  \mcm@strifeq{\mcm@fontset}{mac}{\mcm@mactrue}{}
-  \mcm@strifeq{\mcm@fontset}{windows}{\mcm@windowstrue}{}
-  \mcm@strifeq{\mcm@fontset}{fandol}{\mcm@fandoltrue}{}
-}{
-  \mcm@windowstrue
-}
-
-\ifmcm@fandol
-  \setmainfont[
-    Extension      = .otf,
-    UprightFont    = *-regular,
-    BoldFont       = *-bold,
-    ItalicFont     = *-italic,
-    BoldItalicFont = *-bolditalic,
-  ]{texgyretermes}
-  \setsansfont[
-    Extension      = .otf,
-    UprightFont    = *-regular,
-    BoldFont       = *-bold,
-    ItalicFont     = *-italic,
-    BoldItalicFont = *-bolditalic,
-  ]{texgyreheros}
-  \setmonofont[
-    Extension      = .otf,
-    UprightFont    = *-regular,
-    BoldFont       = *-bold,
-    ItalicFont     = *-italic,
-    BoldItalicFont = *-bolditalic,
-    Scale          = MatchLowercase,
-  ]{texgyrecursor}
+% font settings
+\if@gmcm@linux
+  \input{commons/fonts/npgmcm-font-fandol.def}
 \else
-  \setmainfont{Times New Roman}
-  \setsansfont{Arial}
-  \ifmcm@mac
-    \setmonofont[Scale=MatchLowercase]{Menlo}
+  \if@gmcm@windows
+    \input{commons/fonts/npgmcm-font-windows.def}
   \else
-    \setmonofont[Scale=MatchLowercase]{Courier New}
+    \input{commons/fonts/npgmcm-font-mac.def}
   \fi
 \fi
-
-\ifmcm@mac
-  \setCJKmainfont[
-       UprightFont = * Light,
-          BoldFont = * Bold,
-        ItalicFont = Kaiti SC,
-    BoldItalicFont = Kaiti SC Bold,
-  ]{Songti SC}
-  \setCJKsansfont{Heiti SC}
-  \setCJKfamilyfont{zhsong}[
-       UprightFont = * Light,
-          BoldFont = * Bold,
-  ]{Songti SC}
-  \setCJKfamilyfont{zhhei}{Heiti SC}
-  \setCJKfamilyfont{zhkai}{Kaiti SC}
-  \setCJKfamilyfont{zhli}{Baoli SC}
-  \newcommand*\lishu{\CJKfamily{zhli}}
-\else
-  \ifmcm@windows
-    \IfFileExists{C:/bootfont.bin}{
-      \setCJKmainfont[AutoFakeBold=2.15,ItalicFont=KaiTi_GB2312]{SimSun}
-      \setCJKfamilyfont{zhkai}[AutoFakeBold=2.15]{KaiTi_GB2312}
-    }{
-      \setCJKmainfont[AutoFakeBold=2.15,ItalicFont=KaiTi]{SimSun}
-      \setCJKfamilyfont{zhkai}[AutoFakeBold=2.15]{KaiTi}
-    }
-    \setCJKsansfont[AutoFakeBold=2.15]{SimHei}
-    \setCJKfamilyfont{zhsong}[AutoFakeBold=2.15]{SimSun}
-    \setCJKfamilyfont{zhhei}[AutoFakeBold=2.15]{SimHei}
-    \ifx\lishu\undefined%
-      \setCJKfamilyfont{zhli}{LiSu}
-      \newcommand*\lishu{\CJKfamily{zhli}} %% Do this if it is undefined
-    \fi
-  \else
-    \ifmcm@fandol
-      % \setCJKfamilyfont{zhli}{LiSu} % 需要隶书字体 最好更换其他相似字体
-      % \newcommand*\lishu{\CJKfamily{zhli}}
-      \providecommand{\lishu}{\kaishu}
-      \PackageWarning{heavenlyclouds}{用楷书代替隶书}
-    \fi
-  \fi
-\fi
-
-% \ifmcm@windows
-%   \setCJKfamilyfont{xw}{STXinwei}
-%   \newcommand*{\xinwei}{\CJKfamily{xw}}
-% \else
-%   \ifmcm@mac
-%     \setCJKfamilyfont{xw}{Weibei SC}
-%   \fi
-%   \ifmcm@fandol
-%     % \setCJKfamilyfont{xw}{STXinwei} % 需要安装华文新魏字体 最好更换其他相似字体
-%     \providecommand{\xinwei}{\kaishu}
-%     \PackageWarning{heavenlyclouds}{用楷书代替华文新魏}
-%   \fi
-% \fi
-
 
 % 数学环境, 定理等设置
 \newtheorem{definition}{\gmcm@cap@definition}
@@ -442,7 +344,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
  % \thispagestyle{gmcmheadings}
  \renewcommand\arraystretch{1.5}
- %\noindent 
+ %\noindent
  \begin{tabularx}{\textwidth-40pt}{lX}
   \zihao{-2}\bfseries 学\qquad 校&\zihao{-2}\bfseries\gmcm@tokens@schoolname\\
   \Xhline{1.2pt}\\
@@ -455,6 +357,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
                         &\zihao{-2}\bfseries 3.  \gmcm@tokens@memberc\hfill\null\\
    \Xhline{1.2pt}
   \end{tabularx}
+  \fi
 
 	\makenametitle
 	}
@@ -615,7 +518,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newcommand*{\gmcm@cap@appendixname}{附录}
 \renewcommand*\appendixname{\gmcm@cap@appendixname}
 
-% 定义附录  
+% 定义附录
 % \let\oldappendix\appendix
 \renewcommand\appendix{\par
   \setcounter{section}{0}%

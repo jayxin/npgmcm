@@ -1,0 +1,53 @@
+\ProvidesFile{commons/fonts/npgmcm-font-windows.def}[2026/08/08 v1.0.0 Windows fonts definition (NPGMCM Thesis)]
+
+% 西文字体 -------
+% 主字体 -------
+\setmainfont{Times New Roman}
+% -----
+
+% 无衬线字体 -------
+\setsansfont{Arial}
+% -----
+
+% 等宽字体 -------
+\setmonofont[Scale=MatchLowercase]{Courier New}
+% -----
+% -----
+
+% 中文字体 -------
+% 主字体 -------
+\setCJKmainfont[
+  AutoFakeBold=2.15,
+  ItalicFont=KaiTi
+]{SimSun}
+% -----
+
+% 无衬线字体 -------
+\setCJKsansfont[AutoFakeBold=2.15]{SimHei}
+% -----
+
+% 宋体 -------
+\setCJKfamilyfont{zhsong}[AutoFakeBold=2.15]{SimSun}
+% -----
+
+% 黑体 -------
+\setCJKfamilyfont{zhhei}[AutoFakeBold=2.15]{SimHei}
+% -----
+
+% 楷体 -------
+\setCJKfamilyfont{zhkai}[AutoFakeBold=2.15]{KaiTi}
+% -----
+
+% 隶书 -------
+\setCJKfamilyfont{zhli}{LiSu}
+% -----
+
+\NewDocumentCommand{\songti}{}{\CJKfamily{zhsong}}
+\NewDocumentCommand{\heiti}{}{\CJKfamily{zhhei}}
+\NewDocumentCommand{\kaishu}{}{\CJKfamily{zhkai}}
+\NewDocumentCommand{\lishu}{}{\CJKfamily{zhli}}
+% -----
+
+\endinput
+
+% vim: set ft=tex fdm=marker fmr=\ -------,-----:

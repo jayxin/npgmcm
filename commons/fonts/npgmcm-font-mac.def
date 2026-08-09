@@ -1,0 +1,58 @@
+\ProvidesFile{commons/fonts/npgmcm-font-mac.def}[2026/08/08 v1.0.0 Mac fonts definition (NPGMCM Thesis)]
+
+% 西文字体 -------
+% 主字体 -------
+\setmainfont{Times New Roman}
+% -----
+
+% 无衬线字体 -------
+\setsansfont{Arial}
+% -----
+
+% 等宽字体 -------
+\setmonofont[Scale=MatchLowercase]{Menlo}
+% -----
+% -----
+
+% 中文字体 -------
+% 主字体 -------
+\setCJKmainfont[
+  UprightFont = * Light,
+  BoldFont = * Bold,
+  ItalicFont = Kaiti SC,
+  BoldItalicFont = Kaiti SC Bold,
+]{Songti SC}
+% -----
+
+% 无衬线字体 -------
+\setCJKsansfont{Heiti SC}
+% -----
+
+% 宋体 -------
+\setCJKfamilyfont{zhsong}[
+  UprightFont = * Light,
+  BoldFont = * Bold,
+]{Songti SC}
+% -----
+
+% 黑体 -------
+\setCJKfamilyfont{zhhei}{Heiti SC}
+% -----
+
+% 楷体 -------
+\setCJKfamilyfont{zhkai}{Kaiti SC}
+% -----
+
+% 隶书 -------
+\setCJKfamilyfont{zhli}{Baoli SC}
+% -----
+
+\NewDocumentCommand{\songti}{}{\CJKfamily{zhsong}}
+\NewDocumentCommand{\heiti}{}{\CJKfamily{zhhei}}
+\NewDocumentCommand{\kaishu}{}{\CJKfamily{zhkai}}
+\NewDocumentCommand{\lishu}{}{\CJKfamily{zhli}}
+% -----
+
+\endinput
+
+% vim: set ft=tex fdm=marker fmr=\ -------,-----:
