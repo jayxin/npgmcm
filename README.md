@@ -1,4 +1,18 @@
-# NPGMCM 
+<!-- vim-markdown-toc GFM -->
+
+* [NPGMCM](#npgmcm)
+	* [文件列表](#文件列表)
+	* [编译](#编译)
+		* [本地编译](#本地编译)
+			* [方法1-用 xelatex 编译](#方法1-用-xelatex-编译)
+			* [方法2-用 latexmk 编译](#方法2-用-latexmk-编译)
+		* [在线编译](#在线编译)
+	* [文档类选项说明](#文档类选项说明)
+	* [封面图标和竞赛名称图片更换说明](#封面图标和竞赛名称图片更换说明)
+
+<!-- vim-markdown-toc -->
+
+# NPGMCM
 
 - LaTeX Template for National Post-Graduate Mathematical Contest in Modeling
 - 全国研究生数学建模竞赛 LaTeX 模板
@@ -103,7 +117,7 @@ latexmk -C main
 	* `colorprint`: 彩色打印(默认)。
 - `withoutpreface`: 最终文档不含封面, 不加此选项则默认包含。
 - 操作系统选项(影响文档使用的字体, 根据您的操作系统做相应的更改):
-  * `linux`: 使用本项目 `fonts/` 目录下的字体和 LaTeX 发行版自带字体
+  * `linux`: 使用本项目 `fonts/` 目录下的字体和 LaTeX 发行版自带字体(默认)
   * `windows`: 使用 Windows 操作系统的字体
   * `mac`: 使用 Mac 操作系统的字体
 
@@ -114,5 +128,7 @@ latexmk -C main
 ```
 
 这个例子使用 Windows 操作系统的字体、黑白打印、不带封面。
+
+## 封面图标和竞赛名称图片更换说明
 
 <!-- vim: set noet: -->
