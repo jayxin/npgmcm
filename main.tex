@@ -1,0 +1,58 @@
+%\documentclass[bwprint,fontset=windows]{commons/npgmcmthesis}
+\documentclass[bwprint]{commons/npgmcmthesis}
+
+% 导言区 -------
+% 用户自定义导入宏包、命令、环境等
+\input{commons/preamble.tex}
+
+% 论文基本信息
+\input{contents/info.tex}
+%-----
+
+\begin{document}
+% 封面
+\maketitle
+
+% 摘要
+\input{contents/abstract.tex}
+
+% 目录(不推荐加) -------
+% “华为杯”第二十二届中国研究生数学建模竞赛论文格式规范(2025) 指明摘要后是论文正文
+%\pagestyle{plain}
+%\maketoc
+%\clearpage
+%-----
+
+% 正文 -------
+\pagestyle{plain}
+
+\input{contents/sections/s1.tex}
+
+\input{contents/sections/s2.tex}
+
+\input{contents/sections/s3.tex}
+
+\input{contents/sections/s4.tex}
+
+\input{contents/sections/s5.tex}
+
+\input{contents/sections/s6.tex}
+%-----
+
+% 参考文献
+\input{contents/references.tex}
+
+% 附录 -------
+\begin{appendices}
+% 若需要可自行重置页码
+%\setcounter{page}{1} 
+
+\input{contents/appendix/a1.tex}
+
+\input{contents/appendix/a2.tex}
+\end{appendices}
+%-----
+
+\end{document}
+
+% vim: set ft=tex fdm=marker fmr=\ -------,-----:
