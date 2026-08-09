@@ -1,4 +1,4 @@
-# CUMCM
+# npgmcm 
 
 - LaTeX Template for National Post-Graduate Mathematical Contest in Modeling
 - 全国研究生数学建模竞赛 LaTeX 模板
