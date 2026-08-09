@@ -2,6 +2,9 @@
 
 * [NPGMCM](#npgmcm)
 	* [文件列表](#文件列表)
+	* [下载方式](#下载方式)
+		* [方法1-git克隆](#方法1-git克隆)
+		* [方法2-直接下载某版本的源码压缩包](#方法2-直接下载某版本的源码压缩包)
 	* [编译](#编译)
 		* [本地编译](#本地编译)
 			* [方法1-用 xelatex 编译](#方法1-用-xelatex-编译)
@@ -58,6 +61,33 @@
 ├── main.tex **主文档(Main document, 编译入口文件)**
 └── README.md 项目说明
 ```
+
+## 下载方式
+
+### 方法1-git克隆
+
+需要已经安装好 `git`。
+
+```sh
+git clone https://github.com/jayxin/npgmcm
+```
+
+网络不好可用中转克隆:
+
+```sh
+git clone https://gh-proxy.org/https://github.com/jayxin/npgmcm
+```
+
+### 方法2-直接下载某版本的源码压缩包
+
+- 下载地址:<br>
+https://github.com/jayxin/cumcm/archive/refs/tags/v1.0.0.zip
+- 中转下载地址:<br>
+https://gh-proxy.org/https://github.com/jayxin/cumcm/archive/refs/tags/v1.0.0.zip
+
+最新版本可到 Tags 页面(https://github.com/jayxin/nsmc/tags) 查看，将下载地址的版本编号替换成最新的再下载即可。
+
+Releases 页面(https://github.com/jayxin/cumcm/releases) 可下载到各版本预览的 PDF。
 
 ## 编译
 
