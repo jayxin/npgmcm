@@ -87,7 +87,7 @@ https://gh-proxy.org/https://github.com/jayxin/npgmcm/archive/refs/tags/v1.0.0.z
 
 最新版本可到 Tags 页面(https://github.com/jayxin/npgmcm/tags) 查看，将下载地址的版本编号替换成最新的再下载即可。
 
-Releases 页面(https://github.com/jayxin/npgmcm/releases) 可下载到各版本预览的 PDF。
+Releases 页面(https://github.com/jayxin/npgmcm/releases) 可下载到各版本预览的 PDF，带有 `-color` 后缀的是彩色文档(如表格等)排版的示例。
 
 ## 编译
 
