@@ -104,7 +104,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   xrightmargin=10pt,
   frame=tlbr,framesep=4pt,framerule=0.5pt, % sets the frame style
   %frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
-  basicstyle=\small\fontspec{Courier New},
+  %basicstyle=\small\fontspec{Courier New},
+  basicstyle=\small\ttfamily,
   keywordstyle={\color{mKeyword}},     % sets color for keywords
   stringstyle={\color{mString}},       % sets color for strings
   commentstyle={\color{mComment}},     % sets color for comments
