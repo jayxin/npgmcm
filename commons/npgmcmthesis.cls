@@ -334,7 +334,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   %\def\thepage{0}
 
  \begin{center}
- {\includegraphics{logo.pdf}}
+ {\includegraphics{logo}}
 
   \vskip1.5cm
  {\zihao{2} \gmcm@ges@string@contents \par}
@@ -482,7 +482,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % 常量
 
 %\newcommand\gmcm@ges@string@contents{“华为杯”第十五届全国研究生\par 数学建模竞赛}
-\newcommand\gmcm@ges@string@contents{\includegraphics{title.pdf}}
+\newcommand\gmcm@ges@string@contents{\includegraphics{title}}
 
 %\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
 %\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
