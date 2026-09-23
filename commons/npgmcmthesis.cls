@@ -363,6 +363,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	\makenametitle
 	}
 
+\newcolumntype{Q}{>{\centering\arraybackslash}X}
+
 \def\makenametitle{
 \clearpage
 \thispagestyle{plain}%
@@ -376,8 +378,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \vskip0.6cm%
 
 \begin{center}
-\begin{tabularx}{.95\textwidth}{@{}lX@{}}
-{\zihao{-2}\lishu 题\quad 目: } &\hfill\zihao{3}\heiti \@title\hfill\null\\
+\begin{tabularx}{.95\textwidth}{@{}lQ@{}}
+{\zihao{-2}\lishu 题\quad 目: } &\zihao{3}\heiti \@title\null\\
 \cline{2-2}
 \end{tabularx}
 \end{center}
