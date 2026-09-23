@@ -81,9 +81,9 @@ git clone https://gh-proxy.org/https://github.com/jayxin/npgmcm
 ### 方法2-直接下载某版本的源码压缩包
 
 - 下载地址:<br>
-https://github.com/jayxin/npgmcm/archive/refs/tags/v2.0.0-color.zip
+https://github.com/jayxin/npgmcm/archive/refs/tags/v2.1.0-color.zip
 - 中转下载地址:<br>
-https://gh-proxy.org/https://github.com/jayxin/npgmcm/archive/refs/tags/v2.0.0-color.zip
+https://gh-proxy.org/https://github.com/jayxin/npgmcm/archive/refs/tags/v2.1.0-color.zip
 
 最新版本可到 Tags 页面(https://github.com/jayxin/npgmcm/tags) 查看，将下载地址的版本编号替换成最新的再下载即可。
 
